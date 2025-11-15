@@ -125,19 +125,124 @@
 
 
     /* CSS:ABOUT-START */
-    .section-about p {
-      max-width: 720px;
+    .about-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text p {
       margin-bottom: 1rem;
+      color: #d8e3ec;
+    }
+
+    .about-list {
+      margin: 1rem 0 1.5rem 1rem;
+      padding: 0;
+      list-style: disc;
+      color: #d8e3ec;
+    }
+
+    .about-btns {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .about-btn {
+      background-color: #1b2c3a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.4rem;
+      text-decoration: none;
+      color: #cfe6ff;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .about-btn:hover {
+      background-color: #243b4d;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .about-img {
+      flex: 1;
+      max-width: 480px;
     }
     /* CSS:ABOUT-END */
 
 
-    /* CSS:SKILLS-START */
-    .section-skills p {
-      max-width: 720px;
-      margin-bottom: 1rem;
-    }
-    /* CSS:SKILLS-END */
+/* CSS:SKILLS-START */
+
+.skills-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skills-subtitle {
+  margin-top: 0.5rem;
+  color: #cfd8df;
+  max-width: 720px;
+}
+
+.skills-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 卡片：小圖 + 文字 */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: #15232e;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-card:hover {
+  background-color: #1b2f3c;
+  border-color: rgba(255,255,255,0.18);
+}
+
+/* 小圖 */
+.skill-card-img-sm img {
+  width: 100%;
+  max-width: 120px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* 文字區 */
+.skill-card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  color: #e6f0f8;
+}
+
+.skill-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #d5e0ea;
+}
+
+.skill-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* CSS:SKILLS-END */
+
+
 
 /* CSS:PROJECTS-START */
 
@@ -147,32 +252,29 @@
 
 .projects-layout {
   display: flex;
-  flex-direction: column; /* 手機版：上下排 */
+  flex-direction: column; 
   gap: 2rem;
 }
 
-/* 左側文字區 */
 .projects-text {
   flex: 1;
   max-width: 720px;
 }
 
-/* 右側卡片容器 */
 .projects-cards {
   flex: 1;
   display: flex;
-  flex-wrap: wrap; /* 允許自動換行 */
+  flex-wrap: wrap; 
   gap: 1.5rem;
 }
 
-/* 卡片本體 */
 .project-card {
   background-color: #15232e;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 0.5rem;
   padding: 1rem;
-  width: 100%; /* 手機版單欄 */
-  max-width: 320px; /* 控制卡片寬度，可排多張 */
+  width: 100%;
+  max-width: 320px; 
   flex-grow: 1;
   flex-shrink: 0;
   display: flex;
@@ -180,8 +282,6 @@
   gap: 0.75rem;
 }
 
-
-/* 統一卡片圖片比例（16:9） */
 .project-card img {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -189,8 +289,6 @@
   border-radius: 0.5rem;
 }
 
-
-/* 卡片標題 */
 .project-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -198,24 +296,21 @@
   margin: 0;
 }
 
-/* 卡片描述 */
 .project-desc {
   font-size: 0.9rem;
   color: #c7d2da;
   margin: 0;
 }
 
-/* 更深層的 hover 效果（選用） */
 .project-card:hover {
   border-color: rgba(255, 255, 255, 0.15);
   background-color: #1a2c39;
   transition: all 0.2s ease;
 }
 
-/* 平板以上：左右雙欄 */
 @media (min-width: 768px) {
   .projects-layout {
-    flex-direction: row; /* 左右排 */
+    flex-direction: row;
     align-items: flex-start;
   }
 
@@ -228,20 +323,18 @@
   }
 
   .project-card {
-    width: calc(50% - 1rem); /* 每排兩張 */
+    width: calc(50% - 1rem);
     max-width: none;
   }
 }
 
-/* 桌機以上：可三張並排 */
 @media (min-width: 1024px) {
   .project-card {
-    width: calc(33.33% - 1rem); /* 每排三張 */
+    width: calc(33.33% - 1rem);
   }
 }
 
 /* CSS:PROJECTS-END */
-
 
 
 
@@ -277,19 +370,48 @@
         font-size: 2.5rem;
       }
 
-      .section-about .container,
-      .section-projects .container {
-        display: flex;
+      .about-layout {
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
+      }
+
+      .about-img {
+        max-width: 420px;
+      }
+
+      .section-about .container {
         gap: 3rem;
       }
 
-      .section-about p,
-      .section-projects p {
+      .section-about p {
         max-width: none;
       }
     }
+
+    @media (min-width: 768px) {
+
+      /* ❗ 不要讓 layout 變成 row，保持 column */
+      .skills-layout {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .skills-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+
+      .skill-card {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      .skill-card-img-sm img {
+        max-width: 100px;
+      }
+    }
+
     /* CSS:RWD-END */
 
   </style>
@@ -319,13 +441,13 @@
       <section id="hero" class="section section-hero">
         <div class="container">
 
-          <h1 class="hero-title">個人品牌網站主視覺（Hero 區占位）</h1>
+          <h1 class="hero-title">用前端技術，打造能被看懂、被使用、被信任的介面</h1>
 
           <p class="hero-text">
-            這裡是 Hero 區的占位內容，未來會放上更正式的自我介紹、角色定位（例如 Frontend Developer）與行動呼籲文字。
+            我是一名前端工程師，擅長整合 UI 設計思維，把需求轉成清楚的互動與畫面。從資訊架構、RWD、元件化，到視覺細節與教學協作，都能提供完整支援。
           </p>
           <p class="hero-text">
-            之後會用 Section SDD 的 Prompt 產生完整設計，請將新的 section 程式碼完整貼到這兩個註解之間，完全取代這一區。
+            如果你正在找一位能一起把想法變成成品的夥伴，我能協助你。
           </p>
 
           <div class="hero-img-wrap">
@@ -342,33 +464,114 @@
 
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
-        <div class="container">
-          <div>
-            <h2 id="about-heading" class="section-title">關於我（占位內容）</h2>
-            <p>這裡是 About 區的占位內容，未來會使用 Section SDD 的 Prompt 產生正式版本。</p>
-            <p>請將新產出的完整 section 程式碼貼在這兩個註解之間，完全覆蓋本區內容。</p>
+        <div class="container about-layout">
+
+          <div class="about-text">
+            <h2 id="about-heading" class="section-title">關於我</h2>
+
+            <p>
+              我目前是一名前端工程師，同時也接觸 UI 設計與教學相關工作。主要專長包含前端開發（React、TypeScript）、介面設計（Figma、UI 結構規劃）、RWD 網站製作與互動效果實作。平常接案時會協助從需求釐清、資訊架構、設計到前端實作的一條龍流程。
+            </p>
+
+            <p>
+              我過去在設計與網站企劃領域累積了不少經驗，因此習慣從使用者角度思考，重視溝通、邏輯整理與可理解性。我喜歡把複雜的東西講清楚，也擅長把抽象的需求拆成可執行的步驟；合作時會主動對齊目的、避免模糊不清，讓專案順利推進。
+            </p>
+
+            <ul class="about-list">
+              <li>擅長把需求具象化，能整合企劃、設計與前端開發流程</li>
+              <li>具備 UI 思維的前端工程師，能兼顧畫面視覺與程式架構</li>
+              <li>善於溝通協作，能快速理解問題與提出可行解方</li>
+            </ul>
+
+            <div class="about-btns">
+              <a class="about-btn" href="#projects">查看作品集</a>
+              <a class="about-btn" href="#contact">聯絡我</a>
+            </div>
           </div>
 
-          <div>
+          <div class="about-img">
             <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
-              alt="前端開發者的簡潔工作桌面示意圖，包含筆電與筆記本"
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+              alt="專注撰寫程式的前端工程師示意照片"
               loading="lazy">
           </div>
+
         </div>
       </section>
       <!-- SECTION:ABOUT-END -->
 
 
       <!-- SECTION:SKILLS-START -->
-      <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
-        <div class="container">
-          <h2 id="skills-heading" class="section-title">技能（占位內容）</h2>
-          <p>這裡是 Skills 區的占位內容，未來會用 Section SDD 重新生成正式內容。</p>
-          <p>請將新版 section 程式碼整段貼在這兩個註解中間，完全取代這一區。</p>
+<section id="skills" class="section section-skills" aria-labelledby="skills-heading">
+  <div class="container skills-layout">
+
+    <h2 id="skills-heading" class="section-title">技能模式</h2>
+    <p class="skills-subtitle">
+      把技能拆成可以切換的冒險模式，每一招都是我在專案裡真的會做的事。
+    </p>
+
+    <div class="skills-cards">
+
+      <!-- Frontend Mode -->
+      <div class="skill-card">
+        <div class="skill-card-img-sm">
+          <img 
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+            alt="前端工程師撰寫程式碼示意照片"
+            loading="lazy">
         </div>
-      </section>
+        <div class="skill-card-body">
+          <h3 class="skill-card-title">🛠 Frontend Mode</h3>
+          <ul class="skill-list">
+            <li>React 工法：拆成乾淨可維護的元件</li>
+            <li>RWD 邏輯流：掌握斷點與彈性布局</li>
+            <li>互動微動畫：CSS 製作微動態回饋</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- UI Mode -->
+      <div class="skill-card">
+        <div class="skill-card-img-sm">
+          <img 
+            src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=800&q=80"
+            alt="UI 設計介面示意照片"
+            loading="lazy">
+        </div>
+        <div class="skill-card-body">
+          <h3 class="skill-card-title">🎨 UI Mode</h3>
+          <ul class="skill-list">
+            <li>結構布局感知：精準掌握資訊層級</li>
+            <li>Figma 工具流：Auto Layout、Components</li>
+            <li>對齊偵測器：快速抓出視覺細節問題</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Teaching Mode -->
+      <div class="skill-card">
+        <div class="skill-card-img-sm">
+          <img 
+            src="https://images.unsplash.com/photo-1590650046871-92c887180603?auto=format&fit=crop&w=800&q=80"
+            alt="教學與協作示意照片"
+            loading="lazy">
+        </div>
+        <div class="skill-card-body">
+          <h3 class="skill-card-title">📚 Teaching Mode</h3>
+          <ul class="skill-list">
+            <li>把複雜講到懂：轉成流程與例子</li>
+            <li>跨角色協作：PM / 設計 / 工程語言對齊</li>
+            <li>需求拆解術：把模糊需求拆成可執行步驟</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
       <!-- SECTION:SKILLS-END -->
+
 
 
       <!-- SECTION:PROJECTS-START -->
@@ -376,9 +579,9 @@
   <div class="container projects-layout">
 
     <div class="projects-text">
-      <h2 id="projects-heading" class="section-title">作品集（占位內容）</h2>
-      <p>這裡是 Projects 區的占位內容，未來會用 Section SDD 的 Prompt 產生正式案例展示與作品說明。</p>
-      <p>請將未來產出的完整 section 程式碼，整段貼在兩個註解中間，完全取代現在這一區。</p>
+      <h2 id="projects-heading" class="section-title">作品集</h2>
+      <p>這裡整理了我近期參與的專案與練習作品，涵蓋 UI 介面設計、前端開發、互動效果到小型工具製作。每個作品都從需求出發，著重清楚的邏輯、乾淨的結構與順暢的使用體驗。</p>
+      <p>內容會持續更新，也會加入更多教學示範與 Side Project。如果你想了解我的製作方式，歡迎從這裡開始。</p>
     </div>
 
     <div class="projects-cards">
@@ -389,9 +592,9 @@
           src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
           alt="多領域作品示意圖片：工具與手作相關"
           loading="lazy">
-        <h3 class="project-title">作品名稱一（占位）</h3>
-        <p class="project-desc">此為作品一的占位描述，未來會替換成真實案例介紹。</p>
-        <a href="#" class="project-btn">觀看作品</a>
+        <h3 class="project-title">互動式小工具：RWD 練習作品</h3>
+        <p class="project-desc">以前端邏輯與 UI 思維設計的小型練習作品，專注在版面結構、元件拆解與互動細節，呈現從設計到程式的一條龍製作流程。</p>
+        <a href="#projects" class="project-btn">觀看作品</a>
       </div>
 
       <!-- 作品 2 -->
@@ -400,9 +603,9 @@
           src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
           alt="多領域作品示意圖片：藝術與色彩創作"
           loading="lazy">
-        <h3 class="project-title">作品名稱二（占位）</h3>
-        <p class="project-desc">此為作品二的占位描述，未來會替換成真實案例介紹。</p>
-        <a href="#" class="project-btn">觀看作品</a>
+        <h3 class="project-title">介面設計練習：Figma Layout Showcase</h3>
+        <p class="project-desc">以 Figma 規劃的介面版型示範，包含 Auto Layout、階層整理、設計 Token 以及元件化技巧，展示 UI 設計的邏輯與細節掌控能力。</p>
+        <a href="#projects" class="project-btn">觀看作品</a>
       </div>
 
       <!-- 作品 3 -->
@@ -411,16 +614,14 @@
           src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80"
           alt="多領域作品示意圖片：筆記與內容設計"
           loading="lazy">
-        <h3 class="project-title">作品名稱三（占位）</h3>
-        <p class="project-desc">此為作品三的占位描述，未來會替換成真實案例介紹。</p>
-        <a href="#" class="project-btn">觀看作品</a>
+        <h3 class="project-title">內容呈現練習：資訊排版與閱讀節奏</h3>
+        <p class="project-desc">以內容結構與閱讀節奏為核心的排版練習，著重資訊分組、留白、標題層級與視覺導引，呈現清晰易讀的使用者體驗。</p>
+        <a href="#projects" class="project-btn">觀看作品</a>
       </div>
 
     </div>
   </div>
 </section>
-
-
       <!-- SECTION:PROJECTS-END -->
 
 
@@ -428,9 +629,9 @@
       <!-- SECTION:CONTACT-START -->
       <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
         <div class="container">
-          <h2 id="contact-heading" class="section-title">聯絡我（占位內容）</h2>
-          <p>這裡是 Contact 區的占位內容，未來會使用 Section SDD 套件產生正式聯絡資訊區塊。</p>
-          <p>請把新產出的整段 section 程式碼貼在這兩個註解間，完整覆蓋原始內容。</p>
+          <h2 id="contact-heading" class="section-title">聯絡我</h2>
+          <p>如果你有合作意向、想討論專案、尋找前端支援，或是希望一起構思網站／介面，我都很樂意交流。無論是接案、長期合作、教學與顧問，都可以透過下方方式與我聯繫。</p>
+          <p>告訴我你的想法，我會提供清楚且可執行的建議。</p>
 
           <div class="contact-links">
             <a class="contact-link" href="mailto:hello@example.com">📧 透過 Email 聯絡我</a>
